@@ -53,13 +53,17 @@ def print_menu():
     print("\n")
     print("*******************************************")
     print("Bienvenido")
-    print("1- Inicializar Analizador")
-    print("2- Cargar información de buses de singapur")
+    print("1- Cargar información de buses de singapur") # Clase 1: Implementar digraph básico
+    print("2- Encontrar las paradas más concurridas") # Casa 1: Implementar digraph completo
+    print("3- Encontrar una ruta entre dos paradas (DFS)") # Casa 1: Implementar funcionalidad dfs
+    print("4- Encontrar una ruta entre dos paradas (BFS)") # Clase 2: Implementar funcionalidad bfs
+    print("5- Encontrar la ruta mínima entre dos paradas") # Casa 2: Implementar dijkstra
+    print("6- Mostrar en un mapa la ruta mínima entre dos paradas") # Trabajo Complementario: Mostrar ruta con folium
     print("0- Salir")
     print("*******************************************")
 
 
-def option_two(cont):
+def option_one(cont):
     print("\nCargando información de transporte de singapur ....")
     logic.load_services(cont, servicefile)
     numedges = logic.total_connections(cont)
@@ -67,6 +71,26 @@ def option_two(cont):
     print('Numero de vertices: ' + str(numvertex))
     print('Numero de arcos: ' + str(numedges))
     print('El limite de recursion actual: ' + str(sys.getrecursionlimit()))
+
+def option_two(cont):
+    # TODO: Imprimir los resultados de la opción 2
+    ...
+
+def option_three(cont):
+    # TODO: Imprimir los resultados de la opción 3
+    ...
+
+def option_four(cont):
+    # TODO: Imprimir los resultados de la opción 4
+    ...
+
+def option_five(cont):
+    # TODO: Imprimir los resultados de la opción 5
+    ...
+
+def option_six(cont):
+    # (Opcional) TODO: Imprimir los resultados de la opción 6
+    ...
 
 
 """
@@ -82,11 +106,18 @@ def main():
 
         if int(inputs[0]) == 1:
             print("\nInicializando....")
-            # cont es el controlador que se usará de acá en adelante
-            cont = logic.init()
-
+            cont = logic.new_analyzer()
+            option_one(cont)
         elif int(inputs[0]) == 2:
             option_two(cont)
+        elif int(inputs[0]) == 3:
+            option_three(cont)
+        elif int(inputs[0]) == 4:
+            option_four(cont)
+        elif int(inputs[0]) == 5:
+            option_five(cont)
+        elif int(inputs[0]) == 6:
+            option_six(cont)
         else:
             working = False
             print("Saliendo...")

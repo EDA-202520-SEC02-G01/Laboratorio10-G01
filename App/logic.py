@@ -212,7 +212,7 @@ def add_route_stop(analyzer, service):
     """
     stop_info = m.get(analyzer['stops'], service['BusStopCode'])
     stop_services = stop_info['services']
-    if lt.is_present(stop_services, service['ServiceNo'], lt.default_function) == -1:
+    if lt.is_present(stop_services, service['ServiceNo'], default_function) == -1:
         lt.add_last(stop_services, service['ServiceNo'])
 
     return analyzer
@@ -307,3 +307,14 @@ def format_vertex(service):
     name = service['BusStopCode'] + '-'
     name = name + service['ServiceNo']
     return name
+
+def default_function(e1, e2):
+    """
+    Función de comparación por defecto a modo de ejemplo (esta función debería estar presente en su archivo de listas)
+    Compara dos elementos y retorna 0 si son iguales, 1 si e1 > e2 y -1 si e1 < e2.
+    """
+    if e1 > e2:
+        return 1
+    elif e1 < e2:
+        return -1
+    return 0

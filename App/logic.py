@@ -30,7 +30,7 @@
 
 from DataStructures.List import single_linked_list as lt
 from DataStructures.Map import map_linear_probing as m
-from DataStructures.Graph import digraph as G
+from DataStructures.Graph import diagraph as G
 from DataStructures.Stack import stack as st
 from DataStructures.Graph import bfs as bfs
 

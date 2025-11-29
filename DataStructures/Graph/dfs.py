@@ -8,6 +8,9 @@ def dfs(my_graph, source):
     mlp.put(visited_ht, source, {'marked': True, 'edge_from': None})
     dfs_vertex(my_graph, source, visited_ht)
     return visited_ht
+
+def has_path_to(key_v, visited_map):
+    return mlp.contains(visited_map, key_v)
     
 def path_to(vertex, visited_ht):
     

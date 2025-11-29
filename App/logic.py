@@ -139,6 +139,9 @@ def total_stops(analyzer):
     Total de paradas de autobus en el grafo
     """
     # TODO: Retorne el número de vértices del grafo
+    res=G.order(analyzer)
+    return res
+    
 
 
 def total_connections(analyzer):

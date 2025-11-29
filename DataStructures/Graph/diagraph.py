@@ -63,3 +63,15 @@ def get_vertex_information(my_graph, key_u):
         raise Exception("El vertice no existe")
 
     return vtx.get_value(vertex_u)
+
+def new_graph(order):
+    vertices=mp.new_map(order,0.5)
+    return vertices
+
+def contains_vertex(my_graph, key_u):
+    res=mp.contains(my_graph,key_u)
+    return res
+
+
+
+    

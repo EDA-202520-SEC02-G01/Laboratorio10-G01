@@ -21,3 +21,32 @@ def path_to(vertex, visited_ht):
         vertex = visited_ht["edge_to"].get(vertex, None)
 
     return path
+
+def dfs_vertex(my_graph,vertex,visited_map):
+        
+    if mlp.get(visited_map, vertex) is None:
+        mlp.put(visited_map, vertex, {"marked": False, "edge_from": vertex})
+
+    
+    if mlp.get(visited_map, vertex)["value"]["marked"]:
+        return visited_map
+
+    
+    mlp.get(visited_map, vertex)["value"]["marked"] = True
+
+    
+    adj_list = G.adjacents(my_graph, vertex)
+
+    for i in adj_list["elements"]:
+        
+        if G.contains_vertex(visited_map,i)==False:
+            mlp.put(visited_map, i, {"marked": False, "edge_from": vertex})
+            dfs_vertex(my_graph, i, visited_map)
+
+        elif not mlp.get(visited_map, i)["value"]["marked"]:
+            mlp.get(visited_map, i)["value"]["edge_from"] = vertex
+            dfs_vertex(my_graph, i, visited_map)
+
+        
+
+    return visited_map

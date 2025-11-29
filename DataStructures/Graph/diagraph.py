@@ -72,6 +72,19 @@ def contains_vertex(my_graph, key_u):
     res=mp.contains(my_graph,key_u)
     return res
 
+def adjacents(my_graph, key_u):
+    vertex=mp.get(my_graph, key_u)
+    adj=vtx.get_adjacents(vertex)
+    if mp.is_empty(adj) == False and vertex != None:
+        return mp.key_set(adj)
+    elif vertex != None and mp.is_empty(adj) == True:
+        return []
+    else:
+        return "el vertice no existe"
+    
+    
+    
+
 
 
     

@@ -33,7 +33,8 @@ from DataStructures.Map import map_linear_probing as m
 from DataStructures.Graph import diagraph as G
 from DataStructures.Stack import stack as st
 from DataStructures.Graph import bfs as bfs
-
+from DataStructures.List import array_list as al
+from DataStructures.Graph import dfs as dfs
 import csv
 import time
 import os
@@ -257,14 +258,27 @@ def get_most_concurrent_stops(analyzer):
     Obtiene las 5 paradas más concurridas
     """
     # TODO: Obtener las 5 paradas más concurridas, es decir, con más arcos salientes
-    ...
+    key=G.vertices(analyzer)
+    res=al.new_list()
+    for llave in key["elements"]:
+        if al.size(res) < 5:
+            al.add_last(res,llave)
+        for i in res:
+            adj1=G.adjacents(analyzer,llave)
+            adj2=G.adjacents(analyzer,i)
+            if adj1["size"] > adj2["size"]:
+                al.exchange(llave,i)
+    return res["elements"]
+        
 
 def get_route_between_stops_dfs(analyzer, stop1, stop2):
     """
     Obtener la ruta entre dos parada usando dfs
     """
     # TODO: Obtener la ruta entre dos parada usando dfs
-    ...
+    visited_list=dfs.dfs(analyzer, stop1)
+    res=dfs.path_to(stop2, visited_list)
+    return res
 
 def get_route_between_stops_bfs(analyzer, stop1, stop2):
     """

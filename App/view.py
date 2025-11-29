@@ -98,8 +98,15 @@ def option_four(cont):
         print(parada)
 
 def option_five(cont):
-    # TODO: Imprimir los resultados de la opción 5
-    ...
+    stop1 = input("desde que parada desea iniciar la ruta mínima: ")
+    stop2 = input("en que parada desea terminar la ruta mínima: ")
+    ruta = logic.get_shortest_route_between_stops(cont, stop1, stop2)
+
+    print("la ruta mínima desde " + str(stop1) + " hasta " + str(stop2) + " es:")
+    for parada in ruta:
+        print(parada)
+
+
 
 def option_six(cont):
     # (Opcional) TODO: Imprimir los resultados de la opción 6

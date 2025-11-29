@@ -33,15 +33,4 @@ def bfs_vertex(my_graph, source, visited_ht):
 
 
 
-#Dijkstra
-
-def has_path_to(vertex, structure):
-    visited = structure["visited"]
-
-    if mlp.contains(visited, vertex):
-        info = mlp.get(visited, vertex)
-        if info["marked"] is True:
-            return True
-
-    return False
 

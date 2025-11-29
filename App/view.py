@@ -74,8 +74,11 @@ def option_one(cont):
     print('El limite de recursion actual: ' + str(sys.getrecursionlimit()))
 
 def option_two(cont):
-    # TODO: Imprimir los resultados de la opción 2
-    ...
+    logic.get_most_concurrent_stops(cont)
+    paradas=logic.get_most_concurrent_stops(cont)
+    print('las 5 paradas mas concurridas son:')
+    for parada in paradas:
+        print(parada)
 
 def option_three(cont):
     # TODO: Imprimir los resultados de la opción 3

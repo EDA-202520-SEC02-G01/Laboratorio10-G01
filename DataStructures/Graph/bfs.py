@@ -29,12 +29,6 @@ def bfs_vertex(my_graph, source, visited_ht):
     return visited_ht
 
 
-
-
-
-
-
-
 def has_path_to(vertex, structure):
     visited = structure["visited"]
 

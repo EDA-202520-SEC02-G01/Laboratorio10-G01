@@ -1,6 +1,7 @@
 from DataStructures.Map import map_linear_probing as mlp
 from DataStructures.Graph import diagraph as G
 from DataStructures.Queue import queue as q
+from DataStructures.Stack import stack as st
 
 def bfs_vertex(my_graph, source, visited_ht):
     queue = q.new_queue()
@@ -39,3 +40,15 @@ def has_path_to(vertex, structure):
 
     return False
 
+def path_to(vertex, visited_ht):
+    
+    if vertex not in visited_ht["marked"]:
+        return None
+
+    path = st.new_stack()
+
+    while vertex is not None:
+        st.push(path, vertex)
+        vertex = visited_ht["edge_to"].get(vertex, None)
+
+    return path

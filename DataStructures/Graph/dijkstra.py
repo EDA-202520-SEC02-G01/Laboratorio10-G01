@@ -1,7 +1,7 @@
 from DataStructures.Map import map_linear_probing as mlp
 from DataStructures.Graph import diagraph as G
 from DataStructures.Queue import queue as pq
-from DataStructures.Graph import dijsktra_structure
+from DataStructures.Graph import dijsktra_structure as dijkstra_structure
 import math
 
 def init_structure(graph, source):

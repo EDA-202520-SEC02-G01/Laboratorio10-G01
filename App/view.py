@@ -90,7 +90,12 @@ def option_three(cont):
 
 def option_four(cont):
     # TODO: Imprimir los resultados de la opción 4
-    ...
+    stop1=input("desde que parada desea mirar el recorrido: ")
+    stop2=input("en que parada desea terminar el recorrido: ")
+    paradas=logic.get_route_between_stops_bfs(cont,stop1, stop2)
+    print("el recorrido de paradas por dfs desde "+str(stop1) +" hasta " +str(stop2)+" es:")
+    for parada in paradas:
+        print(parada)
 
 def option_five(cont):
     # TODO: Imprimir los resultados de la opción 5

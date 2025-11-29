@@ -63,3 +63,25 @@ def get_vertex_information(my_graph, key_u):
         raise Exception("El vertice no existe")
 
     return vtx.get_value(vertex_u)
+
+from DataStructures.Map import map_functions as mf
+def insert_vertex(my_graph, key_u, info_u):
+    vertex=vtx.new_vertex(key_u,info_u)
+    mp.put(my_graph["vertices"],key_u,vertex)
+    return my_graph
+
+def order(my_graph):
+    cantidad=mp.size(my_graph)
+    return cantidad
+
+def vertices(my_graph):
+    return mp.key_set(my_graph)
+
+def update_vertex_info(my_graph, key_u, new_info_u):
+    my_map=my_graph["vertices"]
+    valor=mf.hash_value(my_map,key_u)
+    estado,pos=mp.find_slot(my_map,key_u,valor)
+    if estado:
+        my_map["table"]["elements"][pos]["value"]=new_info_u
+    return my_graph
+

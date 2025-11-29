@@ -3,6 +3,11 @@ from DataStructures.Graph import diagraph as G
 from DataStructures.Queue import queue as q
 from DataStructures.Stack import stack as st
 
+def bfs(graph, source):
+    visited_ht = map.new_map(num_elements=G.order(graph), load_factor=0.5)
+    bfs_vertex(graph, source, visited_ht)
+    return visited_ht
+
 def bfs_vertex(my_graph, source, visited_ht):
     queue = q.new_queue()
     q.enqueue(queue, source)
